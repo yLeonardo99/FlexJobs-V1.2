@@ -1,2 +1,23 @@
-# FlexJobs-V1.2
-Projeto foi iniciado no 1° Semestre do curso de ADS, o objetivo foi criar um protótipo com HTML , CSS e JavaScript de um site de vagas de empregos freelancers. Ao decorrer com tempo 2° Atualmente o objetivo foi utilizar PHP e MySQL para enviar os dados de um cadastro para o banco de dados utilizamos XAMPP para servidor local.
+
+<strong>Link de apresentação do nosso vídeo no YouTube</strong><br>
+
+https://www.youtube.com/watch?v=LYOTM1OQ844
+
+<strong>Link de Acesso ao Nosso Site:</strong><br>
+
+https://flex-job.github.io/Projeto_FlexJob/index.html
+
+<b>EQUIPE:</b>
+
+Anderson Cristiano Freitas Raimundo <br>
+Eduardo Expedito Maciel Lacerda <br>
+Geovana Moraes Lopes <br>
+Gabriel Louis da Silva Meszaros<br>
+Henrique da Silva de Andrade <br>
+Jenifer Moreira Soares <br>
+Leonardo Cassiano dos Santos<br>
+Paulo Rafael Costa Sanges<br>
+Paulo Ricardo Duarte Vieira <br>
+Victor Silva Neves <br>
+
+

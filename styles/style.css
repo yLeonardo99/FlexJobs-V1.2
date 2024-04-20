@@ -1,0 +1,795 @@
+/* CORPO */
+
+body {
+  background: linear-gradient(to bottom,
+      rgb(3, 3, 84) 76%,
+      rgb(33, 98, 220) 97%);
+  background-attachment: fixed;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: infinity, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  height: 100px;
+}
+
+.main-list .subscribe-button {
+  margin-top: 0;
+  /* Adicione essa linha para ajustar o espaçamento superior do botão */
+}
+
+/* Fixar o HEADER e os demais tags dentro da tag HEADER */
+
+#fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(3, 3, 84);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#title {
+  line-height: 20px;
+  margin-left: 50px;
+  flex-direction: column;
+  font-size: 28px;
+  color: rgb(51, 181, 220);
+}
+
+#flexbox-name {
+  height: 250px;
+}
+
+
+/*  Página INDEX  */
+
+.main-description {
+  line-height: 30px;
+  font-size: 25px;
+}
+
+.description {
+  line-height: 25px;
+  max-width: 600px;
+}
+
+
+.main-description {
+  line-height: 30px;
+  font-size: 25px;
+}
+
+.description {
+  line-height: 25px;
+  max-width: 600px;
+}
+
+#main-content {
+  margin-bottom: 70px;
+}
+
+
+#description-content {
+  background: rgb(226, 228, 232);
+  color: blue;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+
+#main-content {
+  margin-bottom: 70px;
+}
+
+
+/*    */
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background: linear-gradient(to bottom,
+      rgb(3, 3, 84) 76%,
+      rgb(33, 98, 220) 97%);
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: infinity, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+#title {
+  line-height: 20px;
+  flex-direction: column;
+  font-size: 28px;
+  color: rgb(51, 181, 220);
+}
+
+#flexbox-name {
+  height: 250px;
+}
+
+#description {
+  line-height: 25px;
+  max-width: 600px;
+}
+
+.main-description {
+  line-height: 30px;
+  font-size: 25px;
+}
+
+#main-content {
+  margin-bottom: 70px;
+}
+
+.description {
+  line-height: 25px;
+  max-width: 600px;
+}
+
+/* LOGOTIPO NA TELA INICIO*/
+
+#logotipo {
+  height: 100px;
+  display: inline-block;
+  position: relative;
+  left: 100px;
+  top: 340px;
+}
+
+/* LOGOTIPO NA TELA Fale-Conosco*/
+
+#faleconoscologotipo {
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  margin-left: 800px;
+  margin-top: -468px;
+
+}
+
+/*LOGOTIPO NA TELA LOGIN */
+
+#Login-logotipo {
+
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  left: 800px;
+  top: 100px;
+
+}
+
+.subscribe-button {
+  border: 2px solid rgb(51, 181, 220);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.subscribe-button:hover {
+  background-color: rgb(51, 181, 220);
+  color: black;
+}
+
+.main-title {
+  font-size: 56px;
+  line-height: 70px;
+  margin-top: 65px;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+li {
+  display: inline-block;
+  margin: 20px;
+  font-size: 18px;
+}
+
+span {
+  color: rgb(51, 181, 220);
+}
+
+a {
+  color: rgb(51, 181, 220);
+}
+
+a:hover {
+  color: white;
+  transition: 0.3s, all;
+}
+
+
+
+input {
+  margin-top: 10px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+}
+
+
+
+.title {
+  font-size: 40px;
+  color: rgb(252, 17, 0);
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: rgb(255, 0, 0);
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(255, 0, 0);
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+  color: rgba(255, 255, 255, 0.993);
+  font-size: 20px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+
+
+/* Página SOBRE */
+
+.titulosobre {
+  font-size: 40px;
+  line-height: 3;
+  color: rgb(51, 181, 220);
+  font-weight: bold;
+}
+
+/* FALE CONOSCO */
+
+.bodysuport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(87, 87, 165);
+}
+
+.sectionsuport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 45px;
+  background: rgb(22, 21, 21);
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.sectionsuport .h2suport {
+  color: azure;
+  font-size: 2.5rem;
+  margin: 2rem;
+}
+
+.sectionsuport .formsuport {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formsuport .labelsuport {
+  color: antiquewhite;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.formsuport .inputsuport {
+  padding: 15px;
+  outline: none;
+  border: 0;
+  margin-bottom: 20px;
+  font-size: 15px;
+  transition: all 0.5s;
+}
+
+.formsuport .inputsuport:focus {
+  border-radius: 15px;
+}
+
+.formsuport .textareasuport {
+  padding: 10px;
+  outline: none;
+  border: 0;
+  font-size: 15px;
+  margin-bottom: 30px;
+  transition: all 0.5s;
+}
+
+.formsuport .textareasuport:focus {
+  border-radius: 16px;
+}
+
+.formsuport .btsuport {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent;
+  border: 2px solid rgb(68, 84, 224);
+  color: bisque;
+  transition: all 1s;
+  margin-bottom: 16px;
+}
+
+.formsuport .btsuport:hover {
+  background: rgb(59, 59, 206);
+  color: rgb(61, 61, 230);
+  border-radius: 16px;
+}
+
+/* PUBLICAÇÃO DE SERVIÇOS */
+
+#freelance-container {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  margin: 100px auto;
+  width: 700px;
+  padding-left: 20px;
+  padding-bottom: 50px;
+}
+
+.freelance-form input {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.freelance-form label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input-freelance {
+  height: 20px;
+}
+
+#freelance-title {
+  font-size: 32px;
+  color: white;
+}
+
+#nicho {
+  width: 400px;
+}
+
+#logotipo {
+  height: 500px;
+  display: inline-block;
+  position: relative;
+  left: 100px;
+  bottom: 35px;
+  top: 300px;
+}
+
+.subscribe-button {
+  border: 2px solid rgb(51, 181, 220);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.subscribe-button:hover {
+  background-color: rgb(51, 181, 220);
+  color: black;
+}
+
+.main-title {
+  font-size: 56px;
+  line-height: 50px;
+}
+
+#description-content {
+  background-color: rgb(226, 228, 232);
+  color: blue;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+  position: relative;
+  top: 150px;
+}
+
+ul {
+  margin-right: 50px;
+}
+
+li {
+  display: inline-block;
+  margin: 20px;
+  font-size: 18px;
+}
+
+span {
+  color: rgb(51, 181, 220);
+}
+
+a {
+  color: rgb(51, 181, 220);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  transition: 0.3s, all;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+/* BTN - Do cadastro  */
+
+form [type="submit"] {
+  height: 50px;
+  width: 85%;
+  background-color: rgb(51, 181, 220);
+  font-weight: bold;
+}
+
+form [type="submit"]:hover {
+  cursor: pointer;
+}
+
+
+/* rodape */
+
+footer {
+  background-color: rgb(3, 3, 84);
+  color: white;
+  padding: 30px 0;
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.footer-section h2 {
+  font-size: 1.5em;
+  border-bottom: 2px solid rgb(51, 181, 220);
+  padding-bottom: 5px;
+}
+
+.footer-section p {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: rgb(51, 181, 220);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid rgb(51, 181, 220);
+}
+
+
+/* Test Cadastro / Login */
+
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 159%;
+  left: 10%;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.container button {
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 12px 50px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #ececec;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.box-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .box-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.box {
+  background-color: #512da8;
+  height: 100%;
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.container.active .box {
+  transform: translateX(50%);
+}
+
+.box-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.box-left {
+  transform: translateX(-200%);
+}
+
+.container.active .box-left {
+  transform: translateX(0);
+}
+
+.box-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .box-right {
+  transform: translateX(200%);
+}
+
+#logar {
+  color: #333;
+}
+
+#logar2 {
+  color: #333;
+}
+
+#logologin {
+
+  height: 400px;
+  display: inline-block;
+  position: absolute;
+  left: 65%;
+  top: 220%;
+
+}
+
+#bodyLG {
+
+  background: linear-gradient(to bottom,
+      rgb(3, 3, 84) 76%,
+      rgb(33, 98, 220) 97%);
+  background-attachment: fixed;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: infinity, sans-serif;
+
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/fonts.css" rel="stylesheet">
+    <link rel="Website icon" type="png" href="complements/images/3.png">
+    <title>FlexJobs - Inicio</title>
+    <script src="JavaScript/script.js" defer></script>
+    <script src="JavaScript/login.js" defer></script>
+
+    <title>Login e Cadastro </title>
+</head>
+
+<body id="bodyLG">
+
+
+    <header id="fixed-header">
+        <div id="title">
+            <img src="complements/images/4.png" id="flexbox-name">
+        </div>
+
+        <ul class="main-list">
+            <li><a href="index.html">Início</a>
+            <li><a href="faleconosco.html">Fale Conosco </a></li>
+            <li><a href="sobre.html">Sobre o projeto</a></li>
+            <li><a href="Vagas.html">Vagas</a></li>
+            <li><a href="login.html" class="subscribe-button">Entrar</a></li>
+        </ul>
+
+        <div class="container" id="container">
+
+            <div class="form-container sign-up">
+
+                <form action="PHP/insere.php" method="POST" name="cadastro">
+
+
+                    <h1 id="logar"> Cadastrar-se </h1>
+                    <span> Faça parte da Flex Jobs!</span>
+
+                    <input type="text" placeholder="Name" name="nome" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="CPF" id="cpf" name="cpf" maxlength="14" oninput="formatarCPF(this)"
+                        required>
+
+                    <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
+
+                    <button type="submit" name="btncadastrar">Cadastrar-se </button>
+
+                </form>
+
+            </div>
+
+            <div class="form-container sign-in">
+
+                <form action="#" method="POST" name="login">
+
+                    <h1 id="logar2">Faça seu Login</h1>
+
+                    <span>Digite seu e-mail e senha para acessar plataforma</span><br>
+
+                    <input type="email" placeholder="E-mail" name="lgemail" required>
+                    <input type="password" placeholder="Password" name="lgsenha" required>
+
+                    <a href="#"> Esqueci minha senha!</a>
+
+                    <button name="btnentrar">Entrar</button>
+
+                </form>
+
+            </div>
+
+            <!-- Div para criar um Box  -->
+
+
+            <div class="box-container">
+
+                <div class="box">
+
+                    <div class="box-panel box-left">
+                        <h1>FLEX JOBS!</h1>
+                        <p>Já tenho uma conta</p>
+                        <button class="hidden" id="login">Entrar</button>
+                    </div>
+
+                    <div class="box-panel box-right">
+                        <h1>Olá Seja Bem Vindo!</h1>
+                        <p> Não tem cadastro? Então faça ja o seu.</p>
+                        <button class="hidden" id="register">Cadastrar-se </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <img src="complements/images/3.png" alt="logotipo do site" id="logologin">
+        </article>
+
+
+</html>
