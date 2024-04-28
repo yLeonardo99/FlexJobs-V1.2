@@ -2,10 +2,10 @@
 
 require_once 'conecta.php';
 print_r($_POST);
-$nome=$_POST["nome"];
-$email=$_POST["email"];
-$cpf=$_POST["cpf"];
-$senha=$_POST["senha"];
+$nome = $_POST["nome"];
+$email = $_POST["email"];
+$cpf = $_POST["cpf"];
+$senha = $_POST["senha"];
 
 //$conf_senha=$_POST["conf_senha"];
 
@@ -26,5 +26,3 @@ echo 'ID do último registro inserido: ' . $pdo->lastInsertId();
 
 $stmt = null;
 $pdo = null;
-
-?>
