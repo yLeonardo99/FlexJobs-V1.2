@@ -7,14 +7,74 @@ $stmt->execute();
 
 ?>
 
-<table border="1" width="500">
+<!-- CSS da Tabela -->
+
+<style>
+  h1 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center  ;
+    background: linear-gradient(to bottom, rgb(3, 3, 84) 76%, rgb(33, 98, 220) 97%);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 65%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+
+  }
+
+  th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    background: linear-gradient(to bottom, rgb(3, 3, 84) 76%, rgb(33, 98, 220) 97%);
+  }
+
+
+  td {
+    padding: 8px;
+  }
+
+
+  tr:nth-child(even) {
+    background-color: #fff;
+    font-size: 18px;
+  }
+
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  tr:hover {
+    background-color: #cfe2f3;
+    
+    /* Cor de fundo ao passar o mouse */
+  }
+</style>
+
+
+<h1> Tabela de Usuários </h1>
+<table border="3" width="65%">
   <tr>
-    <th>id</th>
-    <th>nome</th>
-    <th>email</th>
-    <th>cpf</th>
-    <th>senha</th>
-    <th>Ações</th> <!-- Adicionando coluna para as ações -->
+    <th>ID</th>
+    <th>NOME</th>
+    <th>E-MAIL</th>
+    <th>CPF</th>
+    <th>SENHA</th>
+    <th>AÇÕES</th> <!-- Adicionando coluna para as ações -->
   </tr>
   <?php
   while ($result = $stmt->fetch()) {
