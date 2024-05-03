@@ -1,12 +1,15 @@
-<!-- Este é um código PHP que atualiza um registro em um banco de dados utilizando a extensão PDO 
-ou seja  este código atualiza um registro no banco de dados com os valores enviados via POST,
-utilizando a extensão PDO para se conectar ao banco de dados e executar uma consulta de atualização. -->
-
 <?php
-require_once 'conecta.php';
+// Verificar se o método de requisição é POST e se o ID está presente na URL
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
-    $id = $_POST['id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId'])) {
+
+    // Incluir o arquivo de conexão com o banco de dados
+
+    require_once 'conecta.php';
+
+    // Obter os dados do formulário
+
+    $userId = $_POST['userId'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $cpf = $_POST['cpf'];
@@ -17,21 +20,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 
         $query = "UPDATE flexjobs SET nome = :nome, email = :email, cpf = :cpf, senha = :senha WHERE id = :id";
         $stmt = $pdo->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':cpf', $cpf);
         $stmt->bindValue(':senha', $senha);
-
         $stmt->execute();
 
-        echo 'Registro atualizado com sucesso.';
+        // Redirecionar para uma página após a atualização bem-sucedida, adicionando um parâmetro na URL
+
+        header("Location: http://localhost/FlexJobs/Vagas.html?mensagem=Dados+foram+atualizados");
+
+        exit();
     } catch (PDOException $e) {
+
+        // Tratar erros se houver algum problema na atualização
+
         echo "Erro ao atualizar registro: " . $e->getMessage();
     }
 } else {
+
+    // Se o método de requisição não for POST ou se o ID não estiver presente, exibir uma mensagem de erro
+
     echo "Erro: Não foi possível processar a solicitação.";
 }
-
-$pdo = null;
-?>

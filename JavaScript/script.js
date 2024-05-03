@@ -1,4 +1,4 @@
-// Ativando o efeito da Div para passar o CSS
+// Efeito da Div - (Formulário)
 
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');

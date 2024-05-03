@@ -1,135 +1,96 @@
-<?php
-// Iniciar a sessão
+    <?php
 
-session_start();
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+    ?>
 
-// Conexão com o banco de dados
+        <!DOCTYPE html>
+        <html lang="pt-BR">
 
-require_once 'conecta.php';
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Confirmação de Exclusão</title>
+        </head>
 
-// Verificar se o usuário está logado
+        <body>
 
-if (!isset($_SESSION['email'])) {
+            <div class="container" id="container">
 
-    // Se não estiver logado, redirecionar para a página de login
+                <div class="form-container sign-up">
+                    <form action="excluir_usuario.php" method="POST">
 
-    header("Location: login.html");
-    exit();
-}
+                        <h1>Confirmar Exclusão </h1> <br>
+                        <h3>Deseja mesmo excluir sua conta?</h3> <br>
 
-// Consulta SQL para buscar os dados do usuário usando o email da sessão
+                        <!-- Campos do formulário de atualização -->
 
-$query = "SELECT * FROM flexjobs WHERE email = :email";
-$stmt = $pdo->prepare($query);
-$stmt->bindValue(':email', $_SESSION['email']);
-$stmt->execute();
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+                        <input type="hidden" name="userId" value="<?= $usuario['id'] ?>">
 
-// Verificar se encontrou o usuário
+                        <input type="hidden" name="id" value="<?= $id ?>">
+                        <button type="submit" name="confirmarExclusao" id="Btn_Confirmar_Excluir">Sim, Excluir!</button>
 
-if (!$usuario) {
+                        <a href="http://localhost/FlexJobs/PHP/altera.php">
+                            <button type="button" id="BTN_Voltar">Voltar</button>
+                        </a>
 
-    // Se não encontrou, redirecionar para o login
+                    </form>
 
-    header("Location: login.html");
-    exit();
-}
+                </div>
 
-// Fechando conexão com o banco de dados
-
-$pdo = null;
-
-?>
-
-
-<!DOCTYPE html>
-
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Atualizar Dados</title>
-</head>
-
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form action="altera_processa.php" method="POST" name="altera" id="alteraForm">
-
-                <h1 id="logar">Atualizar meus Dados</h1>
-                <span>FlexJobs sempre com você.</span>
-
-                <!-- Campos do formulário de atualização -->
-
-                <input type="hidden" name="userId" value="<?= $usuario['id'] ?>">
-
-                <input type="text" placeholder="Nome" name="nome" value="<?= $usuario['nome'] ?>" required>
-                <input type="email" placeholder="Email" name="email" value="<?= $usuario['email'] ?>" required>
-                <input type="text" placeholder="CPF" id="cpf" name="cpf" value="<?= $usuario['cpf'] ?>" maxlength="14" oninput="formatarCPF(this)" required>
-                <input type="password" placeholder="Nova senha" id="senha" name="senha" value="<?= $usuario['senha'] ?>" required>
-
-                <button type="submit" name="btnatualizar" id="salvar_alteracao">Salvar Alterações</button>
-
-            </form>
-
-            <!-- Aqui esta sendo direcionado ao confirmar exclusão  -->
-
-            <form action="confirmar_exclusao.php" method="POST">
-                <input type="hidden" name="id" value="<?= $usuario['id'] ?>">
-                <button type="submit" name="excluirUsuario" id="excluir">Excluir Usuário</button>
-                
-            </form>
-
-        </div>
-
-        <div class="box-container">
-            <div class="box">
-                <div class="box-panel box-right">
-                    <h1>FlexJobs!</h1><br><br>
-                    <p>"FlexJobs simplifica sua busca por oportunidades flexíveis. Com uma plataforma intuitiva,
-                        conectamos profissionais a empregadores que valorizam a flexibilidade.
-                        Encontre trabalho remoto, meio período e freelance de forma simples e eficiente no FlexJobs.</p>
-                    <br><br>
-                    <a href="http://localhost/FlexJobs/">
-                        <button id="inicio">Voltar ao Menu Inicial</button>
-                    </a>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="box-panel box-right">
+                            <h1>FlexJobs!</h1><br><br>
+                            <p>"FlexJobs simplifica sua busca por oportunidades flexíveis. Com uma plataforma intuitiva,
+                                conectamos profissionais a empregadores que valorizam a flexibilidade.
+                                Encontre trabalho remoto, meio período e freelance de forma simples e eficiente no FlexJobs.</p>
+                            <br><br>
+                            <a href="http://localhost/FlexJobs/">
+                                <button id="inicio">Ir para Início</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Rodapé -->
+            <!-- Rodapé -->
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2>Sobre nós</h2>
-                <p>FlexJobs é uma plataforma para conectar freelancers e contratantes em busca de talento. Oferecemos
-                    oportunidades flexíveis para profissionais em todo o mundo.</p>
-            </div>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section about">
+                        <h2>Sobre nós</h2>
+                        <p>FlexJobs é uma plataforma para conectar freelancers e contratantes em busca de talento. Oferecemos
+                            oportunidades flexíveis para profissionais em todo o mundo.</p>
+                    </div>
 
-            <div class="footer-section contact">
-                <h2>Entre em contato</h2>
-                <p>Email: contato@flexjobs.com</p>
-                <p>Telefone: (11) 5050-5050</p>
-            </div>
+                    <div class="footer-section contact">
+                        <h2>Entre em contato</h2>
+                        <p>Email: contato@flexjobs.com</p>
+                        <p>Telefone: (11) 5050-5050</p>
+                    </div>
 
-            <div class="footer-section links">
-                <h2>Nos sigam nas redes</h2>
-                <ul>
-                    <li>Instagram: @flexjobs</li>
-                </ul>
-            </div>
-        </div>
+                    <div class="footer-section links">
+                        <h2>Nos sigam nas redes</h2>
+                        <ul>
+                            <li>Instagram: @flexjobs</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2023 FlexJobs. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 FlexJobs. Todos os direitos reservados.</p>
+                </div>
+            </footer>
 
-    <!-- CSS (Rodapé - Formulário) -->
+        <?php
+
+    } else {
+        echo "Erro: ID do usuário não encontrado.";
+    }
+        ?>
+
+    <!-- Código CSS (Rodapé - Formulário) -->
 
     <style>
         * {
@@ -149,10 +110,14 @@ $pdo = null;
         }
 
         .container h1,
-        span {
+        h3 {
             margin-right: auto;
             margin-left: 2px;
             text-align: center;
+        }
+
+        .container h3 {
+            text-decoration: underline;
         }
 
         .box-container h1 {
@@ -302,48 +267,52 @@ $pdo = null;
             transform: translateX(0);
         }
 
-        #excluir {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 16px;
-    margin-top: auto; 
-    display: block; 
-    margin-right: 60%; 
-    transition: background-color 0.3s, color 0.3s;
-}
+        #Btn_Confirmar_Excluir {
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 16px;
+            margin-top: auto;
+            display: block;
+            margin-right: 60%;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-#excluir:hover {
-    background-color: red;
-}
+        #Btn_Confirmar_Excluir:hover {
+            background-color: red;
+        }
 
-#inicio {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
+        #inicio {
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-#inicio:hover {
-    background-color: #4caf50; 
-    color: white;
-}
+        #inicio:hover {
+            background-color: #4caf50;
+            color: white;
+        }
 
-#salvar_alteracao {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 16px;
-    transition: background-color 0.3s, color 0.3s;
-    margin-right: 60%;
-}
+        #BTN_Voltar {
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 39px;
+            margin-top: auto;
+            display: block;
+            margin-right: 433px;
+            transition: background-color 0.3s, color 0.3s;
+
+        }
+
+        #BTN_Voltar:hover {
+            background-color: #E6B037;
+            color: black;
+        }
 
 
-#salvar_alteracao:hover {
-    background-color: green; 
-    color:write;
-}
 
         /* CSS_Rodapé */
 
@@ -400,6 +369,6 @@ $pdo = null;
         }
     </style>
 
-</body>
+    </body>
 
-</html>
+    </html>
