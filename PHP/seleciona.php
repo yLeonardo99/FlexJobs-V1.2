@@ -1,3 +1,5 @@
+<!-- PAGINA PARA EXIBIÇÃO DA TABELA ADM -->
+
 <?php
 
 require_once 'conecta.php';
@@ -16,6 +18,7 @@ $stmt->execute();
     <th>NOME</th>
     <th>E-MAIL</th>
     <th>CPF</th>
+    <th>SENHA</th>
   </tr>
 
   <?php
@@ -26,6 +29,7 @@ $stmt->execute();
     echo "<td>" . $result['nome'] . "</td>";
     echo "<td>" . $result['email'] . "</td>";
     echo "<td>" . $result['cpf'] . "</td>";
+    echo "<td>" . md5($result['senha'] ). "</td>"; # Criptografia na senha, exibição da Tabela.
 
     echo "</td>";
     echo "</tr>";
