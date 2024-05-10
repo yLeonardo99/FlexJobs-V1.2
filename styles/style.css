@@ -717,7 +717,7 @@ footer {
 .box {
   background-color: #512da8;
   height: 100%;
-  background: linear-gradient(to right, #000000, #512da8);
+  background: linear-gradient(to right, #5c6bc0, #000000);
   color: #fff;
   position: relative;
   left: -100%;
@@ -744,10 +744,12 @@ footer {
   top: 0;
   transform: translateX(0);
   transition: all 0.6s ease-in-out;
+  background: linear-gradient(to right, #5c6bc0, #000000);
 }
 
 .box-left {
   transform: translateX(-200%);
+
 }
 
 .container.active .box-left {
@@ -755,6 +757,7 @@ footer {
 }
 
 .box-right {
+
   right: 0;
   transform: translateX(0);
 }
@@ -783,9 +786,7 @@ footer {
 
 #bodyLG {
 
-  background: linear-gradient(to bottom,
-      rgb(3, 3, 84) 76%,
-      rgb(33, 98, 220) 97%);
+  background: linear-gradient(to right, #5c6bc0, #000000);
   background-attachment: fixed;
   color: white;
   max-width: 1200px;
@@ -795,7 +796,7 @@ footer {
 }
 
 #LG_Entrar {
-  background-color: #512da8;
+  background: linear-gradient(to right, #5c6bc0, #000000);
   color: white;
   border: 2px solid black;
   padding: 8px 16px;
@@ -803,6 +804,6 @@ footer {
 }
 
 #LG_Entrar:hover {
-  background-color: #4caf50; 
-  color: white; 
-} 
+  background-color: #4caf50;
+  color: white;
+}

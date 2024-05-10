@@ -1,0 +1,23 @@
+Automação de Processos:
+•	 doUtilização PHP para automatizar o processo de atualização de dados no banco de dados.
+
+•	Processamento das requisições POST para atualizar os dados do usuário.
+
+2.	Integração Contínua (CI):
+•	Estruturação do código para facilitar a integração contínua, permitindo atualizações frequentes.
+•	Uso de formulários HTML e PHP para permitir a atualização de dados sem interrupções no serviço.
+3.	Entrega Contínua (CD):
+•	Implementação de um fluxo de atualização contínua, permitindo que as atualizações de dados sejam entregues rapidamente.
+•	Uso de um processo de atualização automatizado para implantar mudanças no servidor de produção.
+4.	Controle de Versão:
+•	Utilização do Git para controle de versão do código-fonte, permitindo o acompanhamento das mudanças e a colaboração entre os 
+    desenvolvedores.
+•	Separação do código em branches para facilitar o gerenciamento e a mesclagem de alterações.
+
+5.	Cultura Colaborativa:
+•	Estruturação do código de forma colaborativa, permitindo que vários desenvolvedores trabalhem juntos de forma eficiente.
+•	Implementação de um fluxo de trabalho que enfatiza a colaboração entre desenvolvedores e a entrega rápida de valor para
+ os usuários.
+6.	Feedback Rápido: A presença de eventos de interação do usuário (por exemplo, clicar em botões para expandir detalhes de vagas) 
+e a exibição de alertas em resposta a ações do usuário (por exemplo, exibir uma mensagem da URL) fornecem feedback imediato ao usuário. Isso é consistente com a busca por feedback rápido,
+ uma prática importante em DevOps para identificar e corrigir problemas rapidamente.

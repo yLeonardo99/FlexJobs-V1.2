@@ -1,6 +1,6 @@
 <?php
 
-// Verificar se o ID do usuário foi passado via POST
+// Aqui está fazendo uma verificação se ID do usuário foi passado via POST
 
 if (isset($_POST['id'])) {
     $userId = $_POST['id'];
@@ -29,10 +29,12 @@ if (isset($_POST['id'])) {
 
         echo "Erro ao excluir usuário: " . $e->getMessage();
     }
-} else {
+} 
 
-    // Se o ID do usuário não foi encontrado, exibir uma mensagem de erro
+// else {
+
+//     // Se o ID do usuário não foi encontrado, exibir uma mensagem de erro
     
-    echo "Erro: ID do usuário não encontrado.";
-}
+//     echo "Erro: ID do usuário não encontrado.";
+// }
 ?>

@@ -35,7 +35,6 @@ if (!$usuario) {
     exit();
 }
 
-// Fechando conexão com o banco de dados
 
 $pdo = null;
 
@@ -74,12 +73,11 @@ $pdo = null;
 
             </form>
 
-            <!-- Aqui esta sendo direcionado ao confirmar exclusão  -->
+            <!-- Aqui é o BTN de excluir ao ser precionado ele é direcionado ao confirmar exclusão  -->
 
             <form action="confirmar_exclusao.php" method="POST">
                 <input type="hidden" name="id" value="<?= $usuario['id'] ?>">
                 <button type="submit" name="excluirUsuario" id="excluir">Excluir Usuário</button>
-                
             </form>
 
         </div>

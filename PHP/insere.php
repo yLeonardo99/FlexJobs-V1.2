@@ -1,4 +1,3 @@
-
 <?php
 
 // Aqui recebemos os dados do formulário.
@@ -8,7 +7,7 @@ print_r($_POST);
 $nome = $_POST["nome"];
 $email = $_POST["email"];
 $cpf = $_POST["cpf"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 
 $query = "insert into flexjobs (nome, email, cpf, senha) values (:nome, :email,:cpf,:senha)";
 
@@ -32,25 +31,27 @@ $pdo = null;
 
 <br><br>
 
-        <a href="http://localhost/FlexJobs/Vagas.html">
-           <button type="button" id="Inicio">Inicio</button> 
-        </a>
+<a href="http://localhost/FlexJobs/Vagas.html">
 
-            <style>
-               #inicio {
-            background-color: #512da8;
-            color: white;
-            border: 2px solid black;
-            padding: 8px 39px;
-            margin-top: auto;
-            display: block;
-            margin-right: 433px;
-            transition: background-color 0.3s, color 0.3s;
 
-        }
+    <button type="button" id="Inicio">Vagas</button>
+</a>
 
-        #inicio:hover {
-            background-color: #E6B037;
-            color: black;
-        }
-             </style>
+<style>
+    #inicio {
+        background-color: #512da8;
+        color: white;
+        border: 2px solid black;
+        padding: 8px 39px;
+        margin-top: auto;
+        display: block;
+        margin-right: 433px;
+        transition: background-color 0.3s, color 0.3s;
+
+    }
+
+    #inicio:hover {
+        background-color: #E6B037;
+        color: black;
+    }
+</style>
