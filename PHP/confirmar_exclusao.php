@@ -89,288 +89,287 @@
         echo "Erro: ID do usuário não encontrado.";
     }
         ?>
-
         
+        <!-- Código CSS (Rodapé - Formulário) -->
 
-    <!-- Código CSS (Rodapé - Formulário) -->
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f1f1f1;
+                background: linear-gradient(to bottom,
+                        rgb(3, 3, 84) 76%,
+                        rgb(33, 98, 220) 97%);
+                background-attachment: fixed;
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            background: linear-gradient(to bottom,
-                    rgb(3, 3, 84) 76%,
-                    rgb(33, 98, 220) 97%);
-            background-attachment: fixed;
+            }
 
-        }
+            .container h1,
+            h3 {
+                margin-right: auto;
+                margin-left: 2px;
+                text-align: center;
+            }
 
-        .container h1,
-        h3 {
-            margin-right: auto;
-            margin-left: 2px;
-            text-align: center;
-        }
+            .container h3 {
+                text-decoration: underline;
+            }
 
-        .container h3 {
-            text-decoration: underline;
-        }
+            .box-container h1 {
+                margin-top: 10px;
+                margin-right: 3%;
+            }
 
-        .box-container h1 {
-            margin-top: 10px;
-            margin-right: 3%;
-        }
+            .box p {
+                margin-top: 10%;
+                margin-right: 10%;
+            }
 
-        .box p {
-            margin-top: 10%;
-            margin-right: 10%;
-        }
+            .container {
+                background-color: #fff;
+                border-radius: 30px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+                position: absolute;
+                top: 37%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                overflow: hidden;
+                width: 758px;
+                max-width: 100%;
+                min-height: 400px;
+                margin-bottom: 150px;
 
-        .container {
-            background-color: #fff;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-            position: absolute;
-            top: 37%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-            width: 758px;
-            max-width: 100%;
-            min-height: 400px;
-            margin-bottom: 150px;
+            }
 
-        }
+            .container h1 {
+                color: write;
+                margin-top: 20px;
+            }
 
-        .container h1 {
-            color: write;
-            margin-top: 20px;
-        }
+            .container span {
+                font-size: 14px;
+                color: #555;
+                margin-bottom: 20px;
+            }
 
-        .container span {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 20px;
-        }
+            .container a {
+                color: #333;
+                font-size: 13px;
+                text-decoration: none;
+                margin: 10px 0 10px;
+                display: block;
+            }
 
-        .container a {
-            color: #333;
-            font-size: 13px;
-            text-decoration: none;
-            margin: 10px 0 10px;
-            display: block;
-        }
+            .container button {
+                background-color: #512da8;
+                color: #fff;
+                font-size: 14px;
+                padding: 12px 50px;
+                border: 1px solid transparent;
+                border-radius: 8px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                margin-top: 1px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-right: auto;
+                margin-left: 40px;
 
-        .container button {
-            background-color: #512da8;
-            color: #fff;
-            font-size: 14px;
-            padding: 12px 50px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-top: 1px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-right: auto;
-            margin-left: 40px;
-
-        }
-
-
-        .container button.hidden {
-            background-color: transparent;
-            border-color: #fff;
-        }
-
-        .container form {
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
-
-        }
-
-        .container input {
-            background-color: #ececec;
-            border: none;
-            margin: 8px 0;
-            padding: 10px 15px;
-            font-size: 14px;
-            border-radius: 8px;
-            width: 100%;
-            outline: none;
-        }
-
-        .form-container {
-            width: 100%;
-        }
-
-        .box-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-            transition: all 0.6s ease-in-out;
-            border-radius: 150px 0 0 100px;
-            z-index: 1000;
-        }
-
-        .container.active .box-container {
-            transform: translateX(-100%);
-            border-radius: 0 150px 100px 0;
-        }
-
-        .box {
-            background-color: #512da8;
-            height: 100%;
-            background: linear-gradient(to right, #5c6bc0, #000000);
-            color: #fff;
-            position: relative;
-            left: -100%;
-            height: 100%;
-            width: 200%;
-            transform: translateX(0);
-        }
-
-        .container.active .box {
-            transform: translateX(50%);
-        }
-
-        .box-panel {
-            position: absolute;
-            width: 50%;
-            height: 98%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 30px;
-            text-align: center;
-            top: 0;
-            transform: translateX(0);
-            transition: all 0.6s ease-in-out;
-        }
-
-        .box-right {
-            right: 0;
-            transform: translateX(0);
-        }
-
-        #Btn_Confirmar_Excluir {
-            background-color: #512da8;
-            color: white;
-            border: 2px solid black;
-            padding: 8px 16px;
-            margin-top: auto;
-            display: block;
-            margin-right: 60%;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        #Btn_Confirmar_Excluir:hover {
-            background-color: red;
-        }
-
-        #inicio {
-            background-color: #512da8;
-            color: white;
-            border: 2px solid black;
-            padding: 8px 20px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        #inicio:hover {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        #BTN_Voltar {
-            background-color: #512da8;
-            color: white;
-            border: 2px solid black;
-            padding: 8px 39px;
-            margin-top: auto;
-            display: block;
-            margin-right: 433px;
-            transition: background-color 0.3s, color 0.3s;
-
-        }
-
-        #BTN_Voltar:hover {
-            background-color: #E6B037;
-            color: black;
-        }
+            }
 
 
+            .container button.hidden {
+                background-color: transparent;
+                border-color: #fff;
+            }
 
-        /* CSS_Rodapé */
+            .container form {
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 20px;
 
-        footer {
-            background-color: rgb(3, 3, 84);
-            color: white;
-            padding: 1px;
-            margin-top: auto;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+            }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+            .container input {
+                background-color: #ececec;
+                border: none;
+                margin: 8px 0;
+                padding: 10px 15px;
+                font-size: 14px;
+                border-radius: 8px;
+                width: 100%;
+                outline: none;
+            }
 
-        .footer-section {
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
+            .form-container {
+                width: 100%;
+            }
 
-        .footer-section h2 {
-            font-size: 1.5em;
-            border-bottom: 2px solid rgb(51, 181, 220);
-            padding-bottom: 5px;
-        }
+            .box-container {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                transition: all 0.6s ease-in-out;
+                border-radius: 150px 0 0 100px;
+                z-index: 1000;
+            }
 
-        .footer-section p {
-            font-size: 1em;
-            margin-top: 5px;
-        }
+            .container.active .box-container {
+                transform: translateX(-100%);
+                border-radius: 0 150px 100px 0;
+            }
 
-        .footer-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
+            .box {
+                background-color: #512da8;
+                height: 100%;
+                height: 100%;
+                background: linear-gradient(to right, #5c6bc0, #000000);
+                color: #fff;
+                position: relative;
+                left: -100%;
+                height: 100%;
+                width: 200%;
+                transform: translateX(0);
+            }
 
-        .footer-section a {
-            color: rgb(51, 181, 220);
-            text-decoration: none;
-        }
+            .container.active .box {
+                transform: translateX(50%);
+            }
 
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
+            .box-panel {
+                position: absolute;
+                width: 50%;
+                height: 98%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 30px;
+                text-align: center;
+                top: 0;
+                transform: translateX(0);
+                transition: all 0.6s ease-in-out;
+            }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 12px;
-            border-top: 2px solid rgb(51, 181, 220);
-        }
-    </style>
+            .box-right {
+                right: 0;
+                transform: translateX(0);
+            }
 
-    </body>
+            #Btn_Confirmar_Excluir {
+                background-color: #512da8;
+                color: white;
+                border: 2px solid black;
+                padding: 8px 16px;
+                margin-top: auto;
+                display: block;
+                margin-right: 60%;
+                transition: background-color 0.3s, color 0.3s;
+            }
 
-    </html>
+            #Btn_Confirmar_Excluir:hover {
+                background-color: red;
+            }
+
+            #inicio {
+                background-color: #512da8;
+                color: white;
+                border: 2px solid black;
+                padding: 8px 20px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            #inicio:hover {
+                background-color: #4caf50;
+                color: white;
+            }
+
+            #BTN_Voltar {
+                background-color: #512da8;
+                color: white;
+                border: 2px solid black;
+                padding: 8px 39px;
+                margin-top: auto;
+                display: block;
+                margin-right: 433px;
+                transition: background-color 0.3s, color 0.3s;
+
+            }
+
+            #BTN_Voltar:hover {
+                background-color: #E6B037;
+                color: black;
+            }
+
+
+
+            /* CSS_Rodapé */
+
+            footer {
+                background-color: rgb(3, 3, 84);
+                color: white;
+                padding: 1px;
+                margin-top: auto;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .footer-section {
+                max-width: 300px;
+                margin-bottom: 20px;
+            }
+
+            .footer-section h2 {
+                font-size: 1.5em;
+                border-bottom: 2px solid rgb(51, 181, 220);
+                padding-bottom: 5px;
+            }
+
+            .footer-section p {
+                font-size: 1em;
+                margin-top: 5px;
+            }
+
+            .footer-section ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .footer-section a {
+                color: rgb(51, 181, 220);
+                text-decoration: none;
+            }
+
+            .footer-section a:hover {
+                text-decoration: underline;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                padding-top: 12px;
+                border-top: 2px solid rgb(51, 181, 220);
+            }
+        </style>
+
+        </body>
+
+        </html>

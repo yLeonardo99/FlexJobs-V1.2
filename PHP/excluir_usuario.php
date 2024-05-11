@@ -29,12 +29,4 @@ if (isset($_POST['id'])) {
 
         echo "Erro ao excluir usuário: " . $e->getMessage();
     }
-} 
-
-// else {
-
-//     // Se o ID do usuário não foi encontrado, exibir uma mensagem de erro
-    
-//     echo "Erro: ID do usuário não encontrado.";
-// }
-?>
+}

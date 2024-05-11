@@ -786,7 +786,10 @@ footer {
 
 #bodyLG {
 
-  background: linear-gradient(to right, #5c6bc0, #000000);
+
+  background: linear-gradient(to bottom,
+  rgb(3, 3, 84) 76%,
+  rgb(33, 98, 220) 97%);
   background-attachment: fixed;
   color: white;
   max-width: 1200px;
@@ -796,7 +799,6 @@ footer {
 }
 
 #LG_Entrar {
-  background: linear-gradient(to right, #5c6bc0, #000000);
   color: white;
   border: 2px solid black;
   padding: 8px 16px;
@@ -804,6 +806,6 @@ footer {
 }
 
 #LG_Entrar:hover {
-  background-color: #4caf50;
+  background-color: #0a630d;
   color: white;
 }

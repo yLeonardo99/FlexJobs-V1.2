@@ -35,7 +35,6 @@ if (!$usuario) {
     exit();
 }
 
-
 $pdo = null;
 
 ?>
@@ -49,7 +48,10 @@ $pdo = null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="JavaScript/Visible_Senha.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-*******************" crossorigin="anonymous" />
     <title>Atualizar Dados</title>
+
 </head>
 
 <body>
@@ -68,6 +70,9 @@ $pdo = null;
                 <input type="email" placeholder="Email" name="email" value="<?= $usuario['email'] ?>" required>
                 <input type="text" placeholder="CPF" id="cpf" name="cpf" value="<?= $usuario['cpf'] ?>" maxlength="14" oninput="formatarCPF(this)" required>
                 <input type="password" placeholder="Nova senha" id="senha" name="senha" value="<?= $usuario['senha'] ?>" required>
+                <span toggle="#senha" class="eye field-icon toggle-password">
+                    <i class="fa fa-eye"></i>
+                </span>
 
                 <button type="submit" name="btnatualizar" id="salvar_alteracao">Salvar Alterações</button>
 
@@ -126,6 +131,20 @@ $pdo = null;
             <p>&copy; 2023 FlexJobs. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+
+    <!-- Script para visiualizar a senha  -->
+    <script>
+        function togglePassword(e) {
+            const passwordField = document.querySelector(e.currentTarget.getAttribute("toggle"));
+            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+            passwordField.setAttribute("type", type);
+        }
+
+        document.querySelectorAll(".toggle-password").forEach((element) => {
+            element.addEventListener("click", togglePassword);
+        });
+    </script>
 
     <!-- CSS (Rodapé - Formulário) -->
 
@@ -301,47 +320,47 @@ $pdo = null;
         }
 
         #excluir {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 16px;
-    margin-top: auto; 
-    display: block; 
-    margin-right: 60%; 
-    transition: background-color 0.3s, color 0.3s;
-}
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 16px;
+            margin-top: auto;
+            display: block;
+            margin-right: 60%;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-#excluir:hover {
-    background-color: red;
-}
+        #excluir:hover {
+            background-color: red;
+        }
 
-#inicio {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
+        #inicio {
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-#inicio:hover {
-    background-color: #4caf50; 
-    color: white;
-}
+        #inicio:hover {
+            background-color: #4caf50;
+            color: white;
+        }
 
-#salvar_alteracao {
-    background-color: #512da8;
-    color: white;
-    border: 2px solid black;
-    padding: 8px 16px;
-    transition: background-color 0.3s, color 0.3s;
-    margin-right: 60%;
-}
+        #salvar_alteracao {
+            background-color: #512da8;
+            color: white;
+            border: 2px solid black;
+            padding: 8px 16px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-right: 60%;
+        }
 
 
-#salvar_alteracao:hover {
-    background-color: green; 
-    color:write;
-}
+        #salvar_alteracao:hover {
+            background-color: green;
+            color: write;
+        }
 
         /* CSS_Rodapé */
 

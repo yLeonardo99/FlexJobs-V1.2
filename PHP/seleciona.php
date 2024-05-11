@@ -22,6 +22,7 @@ $stmt->execute();
   </tr>
 
   <?php
+
   while ($result = $stmt->fetch()) {
 
     echo "<tr>";
@@ -29,7 +30,7 @@ $stmt->execute();
     echo "<td>" . $result['nome'] . "</td>";
     echo "<td>" . $result['email'] . "</td>";
     echo "<td>" . $result['cpf'] . "</td>";
-    echo "<td>" . md5($result['senha'] ). "</td>"; # Criptografia na senha, exibição da Tabela.
+    echo "<td>" . md5($result['senha']) . "</td>"; # Criptografia na senha, exibição da Tabela.
 
     echo "</td>";
     echo "</tr>";

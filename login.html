@@ -8,12 +8,13 @@
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
     <link rel="Website icon" type="png" href="complements/images/3.png">
-    <title>FlexJobs - Inicio</title>
     <script src="JavaScript/script.js" defer></script>
     <script src="JavaScript/login.js" defer></script>
+    <script src="JavaScript/Visible_Senha.js" defer></script>
 
     <title>Login e Cadastro </title>
-</head>
+
+</head> 
 
 <body id="bodyLG">
 
@@ -47,8 +48,15 @@
                     <input type="email" placeholder="Email" name="email" required>
                     <input type="text" placeholder="CPF" id="cpf" name="cpf" maxlength="14" oninput="formatarCPF(this)"
                         required>
-
-                    <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
+                        
+                        <div class="input-container">
+                            <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
+                            <span id="olho2"  toggle="#senha" class="eye field-icon toggle-password">👁️
+                                <i class="fa fa-eye"></i>
+                            </span>
+                        </div> <br>
+                        
+                
 
                     <button type="submit" name="btncadastrar" id="LG_Cadastrar">Cadastrar-se </button>
 
@@ -65,7 +73,9 @@
                     <span>Digite seu e-mail e senha para acessar a plataforma</span><br>
 
                     <input type="email" placeholder="E-mail" name="lgemail" required>
-                    <input type="password" placeholder="Password" name="lgsenha" required>
+                    <input type="password" placeholder="Password" name="lgsenha" id="senhaInput" required>
+<span id="olho" onclick="toggleSenha()">👁️</span>
+
 
                     <button type="submit" name="btnentrar" id="LG_Entrar">Entrar</button>
 
@@ -103,19 +113,47 @@
             <img src="complements/images/3.png" alt="logotipo do site" id="logologin">
         </article>
 
+        
         <style>
-            /* Estilo para o botão */
+            #olho {
+        position: absolute;
+        margin-left: 70%; /* Ajuste conforme necessário */
+        cursor: pointer;
+        margin-top: 30%;
+    }
+            
+        #senha{
+            
+            margin: -12%;
+        }
+
+    .input-container {
+        position: relative;
+        width: 90%;
+        margin-top: 13px;
+    }
+
+    .input-container input {
+        padding-right: 40px; /* Espaço para o ícone */
+        margin-right: 10px; /* Ajuste para mover para a esquerda */
+    }
+
+    .input-container .eye {
+        position: absolute; 
+        top: 50%;
+        right: -9%; /* Ajuste conforme necessário */
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
 
             #LG_Entrar {
                 background-color: #512da8;
                 color: white;
-                border: 2px solid black;
-                padding: 8px 16px;
-                transition: background-color 0.3s, color 0.3s;
+                padding: 8px 16px;    
             }
 
             #LG_Entrar:hover {
-                background-color: #24780d93;
+                background-color: #2f9f1093;
             }
 
             #LG_Cadastrar {
