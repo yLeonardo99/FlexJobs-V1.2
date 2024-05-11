@@ -1,4 +1,3 @@
-![CAPA_FLEXJOBS](https://github.com/yLeonardo99/Projeto_FlexJob/assets/126301869/6846819f-9491-4fe2-8479-596c6d7a78a3)
 
 <strong>Link de Acesso ao Nosso Site:</strong><br>
 
