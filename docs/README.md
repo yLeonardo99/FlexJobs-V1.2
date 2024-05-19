@@ -1,4 +1,4 @@
-![CAPA_FLEXJOBS](https://github.com/yLeonardo99/Projeto_FlexJob/assets/126301869/6846819f-9491-4fe2-8479-596c6d7a78a3)
+![CAPA_FLEXJOBS](https://github.com/yLeonardo99/FlexJobs-V1.2/blob/main/complements/images/capa.jpg)
 
 <strong>Link de Acesso ao Nosso Site:</strong><br>
 
@@ -21,7 +21,7 @@ Geovana Moraes Lopes <br>
 Gabriel Louis da Silva Meszaros<br>
 Henrique da Silva de Andrade <br>
 Jenifer Moreira Soares <br>
-Leonardo Cassiano dos Santos<br>    
+Leonardo Cassiano dos Santos   
 Paulo Rafael Costa Sanges<br>
 Paulo Ricardo Duarte Vieira <br>
 Victor Silva Neves <br>
