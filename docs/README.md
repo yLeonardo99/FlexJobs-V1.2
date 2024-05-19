@@ -5,7 +5,7 @@
  https://yleonardo99.github.io/FlexJobs-V1.2/
 
 
-<strong>Link do Video sobre nosso site o que foi aplicado de BackEnd:</strong><br>
+<strong>Link do Video sobre nosso site o que foi aplicado de Back-End:</strong><br>
 
 https://www.youtube.com/watch?v=WWiKTDfuZYY
 
