@@ -28,7 +28,6 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 // Verificar se encontrou o usuário
 
 if (!$usuario) {
-
     // Se não encontrou, redirecionar para o login
 
     header("Location: login.html");
@@ -36,14 +35,10 @@ if (!$usuario) {
 }
 
 $pdo = null;
-
 ?>
 
-
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,31 +46,23 @@ $pdo = null;
     <script src="JavaScript/Visible_Senha.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-*******************" crossorigin="anonymous" />
     <title>Atualizar Dados</title>
-
 </head>
-
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form action="altera_processa.php" method="POST" name="altera" id="alteraForm">
-
                 <h1 id="logar">Atualizar meus Dados</h1>
                 <span>FlexJobs sempre com você.</span>
-
-                <!-- Campos do formulário de atualização -->
-
+        
                 <input type="hidden" name="userId" value="<?= $usuario['id'] ?>">
-
                 <input type="text" placeholder="Nome" name="nome" value="<?= $usuario['nome'] ?>" required>
                 <input type="email" placeholder="Email" name="email" value="<?= $usuario['email'] ?>" required>
                 <input type="text" placeholder="CPF" id="cpf" name="cpf" value="<?= $usuario['cpf'] ?>" maxlength="14" oninput="formatarCPF(this)" required>
-                <input type="password" placeholder="Nova senha" id="senha" name="senha" value="<?= $usuario['senha'] ?>" required>
+                <input type="password" placeholder="Nova senha" id="senha" name="senha" required>
                 <span toggle="#senha" class="eye field-icon toggle-password">
                     <i class="fa fa-eye"></i>
                 </span>
-
                 <button type="submit" name="btnatualizar" id="salvar_alteracao">Salvar Alterações</button>
-
             </form>
 
             <!-- Aqui é o BTN de excluir ao ser precionado ele é direcionado ao confirmar exclusão  -->
@@ -134,6 +121,7 @@ $pdo = null;
 
 
     <!-- Script para visiualizar a senha  -->
+
     <script>
         function togglePassword(e) {
             const passwordField = document.querySelector(e.currentTarget.getAttribute("toggle"));
@@ -144,6 +132,7 @@ $pdo = null;
         document.querySelectorAll(".toggle-password").forEach((element) => {
             element.addEventListener("click", togglePassword);
         });
+
     </script>
 
     <!-- CSS (Rodapé - Formulário) -->
