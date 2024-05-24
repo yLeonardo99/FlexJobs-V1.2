@@ -1,4 +1,5 @@
 <?php
+
 // Verificar se o método de requisição é POST e se o ID está presente na URL
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId'])) {
@@ -15,6 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId'])) {
     $cpf = $_POST['cpf'];
     $senha = $_POST['senha'];
 
+    // Criptografar a senha usando MD5
+
+    $senhaCriptografada = md5($senha);
+
     try {
         // Query para atualizar os dados no banco de dados
 
@@ -24,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId'])) {
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':cpf', $cpf);
-        $stmt->bindValue(':senha', $senha);
+        $stmt->bindValue(':senha', $senhaCriptografada);
         $stmt->execute();
 
         // Redirecionar para uma página após a atualização bem-sucedida, adicionando um parâmetro na URL
 
         header("Location: http://localhost/FlexJobs/Vagas.html?mensagem=Dados+foram+atualizados");
-
         exit();
+
     } catch (PDOException $e) {
 
         // Tratar erros se houver algum problema na atualização
@@ -44,3 +49,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId'])) {
 
     echo "Erro: Não foi possível processar a solicitação.";
 }
+
+?>
