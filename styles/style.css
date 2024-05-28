@@ -788,8 +788,8 @@ footer {
 
 
   background: linear-gradient(to bottom,
-  rgb(3, 3, 84) 76%,
-  rgb(33, 98, 220) 97%);
+      rgb(3, 3, 84) 76%,
+      rgb(33, 98, 220) 97%);
   background-attachment: fixed;
   color: white;
   max-width: 1200px;

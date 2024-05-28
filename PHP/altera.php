@@ -36,12 +36,9 @@ if (!$usuario) {
 }
 
 $pdo = null;
-
 ?>
 
-
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -49,9 +46,9 @@ $pdo = null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="JavaScript/Visible_Senha.js" defer></script>
+    <script src="JavaScript/altera.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-*******************" crossorigin="anonymous" />
     <title>Atualizar Dados</title>
-
 </head>
 
 <body>
@@ -59,24 +56,22 @@ $pdo = null;
         <div class="form-container sign-up">
             <form action="altera_processa.php" method="POST" name="altera" id="alteraForm">
 
-                <h1 id="logar">Atualizar meus Dados</h1>
-                <span>FlexJobs sempre com você.</span>
-
-                <!-- Campos do formulário de atualização -->
-
                 <input type="hidden" name="userId" value="<?= $usuario['id'] ?>">
-
                 <input type="text" placeholder="Nome" name="nome" value="<?= $usuario['nome'] ?>" required>
                 <input type="email" placeholder="Email" name="email" value="<?= $usuario['email'] ?>" required>
                 <input type="text" placeholder="CPF" id="cpf" name="cpf" value="<?= $usuario['cpf'] ?>" maxlength="14" oninput="formatarCPF(this)" required>
-                <input type="password" placeholder="Nova senha" id="senha" name="senha" value="<?= $usuario['senha'] ?>" required>
-                <span toggle="#senha" class="eye field-icon toggle-password">
-                    <i class="fa fa-eye"></i>
-                </span>
+                <span style="text-decoration: underline; color: navy;">Digite sua senha ou se preferir digite uma nova senha !</span>
+                <input type="password" placeholder="Digite a Senha" id="senha" name="senha" required>
+                <span id="olho" onclick="toggleSenha('senha')">👁️</span>
 
+                <input type="password" placeholder="Confirmar senha " id="confirmarSenha" name="confirmar_senha" required>
+                <span id="olhoConfirmar" onclick="toggleSenha('confirmarSenha')">👁️</span>
+
+                <span id="senhaErro" style="color: red;"></span> <!-- Mensagem de erro para senhas diferentes -->
                 <button type="submit" name="btnatualizar" id="salvar_alteracao">Salvar Alterações</button>
-
             </form>
+
+
 
             <!-- Aqui é o BTN de excluir ao ser precionado ele é direcionado ao confirmar exclusão  -->
 
@@ -102,6 +97,80 @@ $pdo = null;
             </div>
         </div>
     </div>
+
+
+    <!-- Script para visiualizar a senha  -->
+
+    <script>
+        function togglePassword(e) {
+            const passwordFields = document.querySelectorAll(e.currentTarget.getAttribute("toggle"));
+            passwordFields.forEach((passwordField) => {
+                const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+                passwordField.setAttribute("type", type);
+            });
+        }
+
+        document.querySelectorAll(".toggle-password").forEach((element) => {
+            element.addEventListener("click", togglePassword);
+        });
+
+
+        // Formatação do CPF
+
+        function formatarCPF(campo) {
+            let cpf = campo.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (cpf.length > 3 && cpf.length <= 6) {
+                cpf = cpf.substring(0, 3) + '.' + cpf.substring(3);
+            } else if (cpf.length > 6 && cpf.length <= 9) {
+                cpf = cpf.substring(0, 3) + '.' + cpf.substring(3, 6) + '.' + cpf.substring(6);
+            } else if (cpf.length > 9) {
+                cpf = cpf.substring(0, 3) + '.' + cpf.substring(3, 6) + '.' + cpf.substring(6, 9) + '-' + cpf.substring(9);
+            }
+            campo.value = cpf;
+        }
+
+        /* Olho da input Insira senha
+
+        Olho dos Input "Senha e Confirmar senha"*/
+
+        function toggleSenha(inputId) {
+            let input = document.getElementById(inputId);
+            let olho = document.getElementById("olho");
+            let olhoConfirmar = document.getElementById("olhoConfirmar");
+
+            if (input.type === "password") {
+                input.type = "text"; // Muda para texto visível
+                if (inputId === "senha") {
+                    olho.textContent = "🙈"; // Adiciona o ícone do macaquinho
+                } else if (inputId === "confirmarSenha") {
+                    olhoConfirmar.textContent = "🙈"; // Adiciona o ícone do macaquinho
+                }
+            } else {
+                input.type = "password"; // Muda de volta para password
+                if (inputId === "senha") {
+                    olho.textContent = "👁️"; // Volta ao ícone original do olho
+                } else if (inputId === "confirmarSenha") {
+                    olhoConfirmar.textContent = "👁️"; // Volta ao ícone original do olho
+                }
+            }
+        }
+
+        // Script para caso se ambas senhas forem diferentes
+            
+        document.getElementById('alteraForm').addEventListener('submit', function(event) {
+            let senha = document.getElementById('senha').value;
+            let confirmarSenha = document.getElementById('confirmarSenha').value;
+            let senhaErro = document.getElementById('senhaErro');
+
+            if (senha !== confirmarSenha) {
+                event.preventDefault(); // Impede o envio do formulário
+                senhaErro.textContent = 'As senhas não coincidem, por favor verifique.';
+            } else {
+                senhaErro.textContent = ''; // Limpa a mensagem de erro se as senhas coincidirem
+            }
+        });
+
+    </script>
 
     <!-- Rodapé -->
 
@@ -133,22 +202,30 @@ $pdo = null;
     </footer>
 
 
-    <!-- Script para visiualizar a senha  -->
-    <script>
-        function togglePassword(e) {
-            const passwordField = document.querySelector(e.currentTarget.getAttribute("toggle"));
-            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-            passwordField.setAttribute("type", type);
-        }
-
-        document.querySelectorAll(".toggle-password").forEach((element) => {
-            element.addEventListener("click", togglePassword);
-        });
-    </script>
-
     <!-- CSS (Rodapé - Formulário) -->
 
     <style>
+        #confirmarSenha {
+            margin-top: -20px;
+            /* Ajuste a seu gosto */
+        }
+
+
+        #olhoConfirmar {
+
+            position: relative;
+            top: -35px;
+            left: 45%;
+        }
+
+        #olho {
+            cursor: pointer;
+            position: relative;
+            top: -36px;
+            left: 45%;
+
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;

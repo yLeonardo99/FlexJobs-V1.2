@@ -1,16 +1,13 @@
 <?php
-
-// Aqui recebemos os dados do formulário.
-
 require_once 'conecta.php';
-print_r($_POST);
+
 $nome = $_POST["nome"];
 $email = $_POST["email"];
 $cpf = $_POST["cpf"];
 $senha = md5($_POST["senha"]);
+$confirmarSenha = md5($_POST["confirmarSenha"]);
 
 // Verificar se o email ou CPF já existem na tabela
-
 $query = "SELECT COUNT(*) AS count FROM flexjobs WHERE email = :email OR cpf = :cpf";
 $stmt = $pdo->prepare($query);
 $stmt->bindValue(':email', $email);
@@ -21,9 +18,11 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($usuario['count'] > 0) {
     echo '<p style="color: red;">Erro: O email ou CPF já estão cadastrados.</p>';
     exit; // Sai do script após mostrar a mensagem de erro
+} elseif ($senha !== $confirmarSenha) {
+    echo '<p style="color: red;">Erro: As senhas não coincidem.</p>';
+    exit; // Sai do script após mostrar a mensagem de erro
 } else {
-
-    $query = "insert into flexjobs (nome, email, cpf, senha) values (:nome, :email,:cpf,:senha)";
+    $query = "INSERT INTO flexjobs (nome, email, cpf, senha, confirmar_senha) VALUES (:nome, :email, :cpf, :senha, :confirmarSenha)";
 
     $stmt = $pdo->prepare($query);
 
@@ -31,17 +30,16 @@ if ($usuario['count'] > 0) {
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':cpf',   $cpf);
     $stmt->bindValue(':senha', $senha);
+    $stmt->bindValue(':confirmarSenha', $confirmarSenha);
 
     $stmt->execute();
-    echo 'Quantidades de registros: ' . $stmt->rowCount() . '<br>';
+    echo 'Quantidade de registros: ' . $stmt->rowCount() . '<br>';
     echo 'ID do último registro inserido: ' . $pdo->lastInsertId();
 
     $stmt = null;
     $pdo = null;
 }
-
 ?>
-
 
 <br><br>
 

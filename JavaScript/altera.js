@@ -1,4 +1,6 @@
 
+// Mensagem na URL
+
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, "\\$&");
     let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -17,3 +19,5 @@ if (mensagem) {
 
     alert(mensagem);
 }
+
+

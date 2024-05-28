@@ -1,5 +1,14 @@
     <?php
 
+    /* Confirmar Exclusão é o formulário com 03 Opções sendo elas;
+1. Sim Exluir 
+2. Voltar (Volta para pagina anterior)
+3. Menu Inicial
+
+Obs: Ao clicar na 01 opção o uusuario será deletado do nosso banco de dados.
+2. o Usuario retornar para pagina anterior ou seja a pagina de Update que é para atualização cadastrais.
+3. Opção de ir para nosso manu inicial sendo interativa podendo navegar e conhecer sobre nosso site.
+*/
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
     ?>
@@ -18,12 +27,11 @@
             <div class="container" id="container">
 
                 <div class="form-container sign-up">
+
                     <form action="excluir_usuario.php" method="POST">
 
                         <h1>Confirmar Exclusão </h1> <br>
                         <h3>Deseja mesmo excluir sua conta?</h3> <br>
-
-                        <!-- Campos do formulário de atualização -->
 
                         <input type="hidden" name="userId" value="<?= $usuario['id'] ?>">
 
@@ -89,7 +97,7 @@
         echo "Erro: ID do usuário não encontrado.";
     }
         ?>
-        
+
         <!-- Código CSS (Rodapé - Formulário) -->
 
         <style>

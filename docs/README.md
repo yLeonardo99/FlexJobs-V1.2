@@ -26,7 +26,7 @@ Paulo Rafael Costa Sanges<br>
 Paulo Ricardo Duarte Vieira <br>
 Victor Silva Neves <br>
 
-<b>SEGUE NOSSA EQUIPE; ABAIXO REPOSITÓRIO DOS MEMBROS FlexJobs:</b>
+<b>SEGUE NOSSA EQUIPE!; ABAIXO REPOSITÓRIO DOS MEMBROS FlexJobs:</b>
 
 Leonardo Cassiano dos Santos <br>
 https://github.com/yLeonardo99 <br>

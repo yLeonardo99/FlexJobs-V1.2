@@ -30,3 +30,5 @@ if (isset($_POST['id'])) {
         echo "Erro ao excluir usuário: " . $e->getMessage();
     }
 }
+
+?>

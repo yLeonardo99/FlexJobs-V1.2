@@ -1,4 +1,4 @@
-O QUE FOI UTILIZADO DE DevOps NO PROJETO;
+O QUE FOI APLICADO DE DevOps NO PROJETO (Flex Jobs);
 
 1. Automação de Processos:
 

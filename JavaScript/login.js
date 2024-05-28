@@ -12,6 +12,7 @@ function formatarCPF(campo) {
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
     //  Atualiza o valor do campo
-    
+
     campo.value = cpf;
 }
+

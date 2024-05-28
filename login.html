@@ -10,11 +10,11 @@
     <link rel="Website icon" type="png" href="complements/images/3.png">
     <script src="JavaScript/script.js" defer></script>
     <script src="JavaScript/login.js" defer></script>
-    <script src="JavaScript/Visible_Senha.js" defer></script>
+    <script src="JavaScript/cadastro.js" defer></script>
 
     <title>Login e Cadastro </title>
 
-</head> 
+</head>
 
 <body id="bodyLG">
 
@@ -32,36 +32,30 @@
             <li><a href="login.html" class="subscribe-button">Entrar</a></li>
         </ul>
 
-
-
         <div class="container" id="container">
-
             <div class="form-container sign-up">
-
-                <form action="PHP/insere.php" method="POST" name="cadastro">
-
-
-                    <h1 id="logar"> Cadastrar-se </h1>
-                    <span> Faça parte da Flex Jobs!</span>
-
+                <form action="PHP/insere.php" method="POST" name="cadastro" onsubmit="return verificarSenhas()">
+                    <h1 id="logar">Cadastrar-se</h1>
+                    <span>Faça parte da Flex Jobs!</span>
                     <input type="text" placeholder="Name" name="nome" required>
                     <input type="email" placeholder="Email" name="email" required>
                     <input type="text" placeholder="CPF" id="cpf" name="cpf" maxlength="14" oninput="formatarCPF(this)"
                         required>
-                        
-                        <div class="input-container">
-                            <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
-                            <span id="olho2"  toggle="#senha" class="eye field-icon toggle-password">👁️
-                                <i class="fa fa-eye"></i>
-                            </span>
-                        </div> <br>
-                        
-                
-
-                    <button type="submit" name="btncadastrar" id="LG_Cadastrar">Cadastrar-se </button>
-
+                    <div class="input-container">
+                        <input type="password" placeholder="Crie uma senha" id="senha" name="senha" required>
+                        <span id="olhoSenha" toggle="#senha" class="eye field-icon toggle-password"
+                            onclick="togglePassword('senha', this)">👁️</span>
+                    </div>
+                    <br>
+                    <div class="input-container" id="confirmasenha">
+                        <input type="password" placeholder="Confirmar senha" id="confirmarSenha" name="confirmarSenha"
+                            required>
+                        <span id="olhoConfirmar" toggle="#confirmarSenha" class="eye field-icon toggle-password"
+                            onclick="togglePassword('confirmarSenha', this)">👁️</span>
+                    </div>
+                    <span id="senhaErro" style="color: red;"></span> <!-- Mensagem de erro para senhas diferentes -->
+                    <button type="submit" name="btncadastrar" id="LG_Cadastrar">Cadastrar-se</button>
                 </form>
-
             </div>
 
             <div class="form-container sign-in">
@@ -74,11 +68,10 @@
 
                     <input type="email" placeholder="E-mail" name="lgemail" required>
                     <input type="password" placeholder="Password" name="lgsenha" id="senhaInput" required>
-<span id="olho" onclick="toggleSenha()">👁️</span>
+                    <span id="olho" onclick="toggleSenha()">👁️</span>
 
 
                     <button type="submit" name="btnentrar" id="LG_Entrar">Entrar</button>
-
 
                 </form>
 
@@ -113,43 +106,64 @@
             <img src="complements/images/3.png" alt="logotipo do site" id="logologin">
         </article>
 
-        
+        <script>
+
+            // Olho de Login
+
+            function toggleSenha() {
+                let senhaInput = document.getElementById("senhaInput");
+                let olho = document.getElementById("olho");
+
+                if (senhaInput.type === "password") {
+                    senhaInput.type = "text"; // Muda para texto visível
+                    olho.textContent = "🙈"; // Adiciona o ícone do macaquinho
+                } else {
+                    senhaInput.type = "password"; // Muda de volta para password
+                    olho.textContent = "👁️"; // Volta ao ícone original do olho
+                }
+            }
+        </script>
+
         <style>
             #olho {
-        position: absolute;
-        margin-left: 70%; /* Ajuste conforme necessário */
-        cursor: pointer;
-        margin-top: 30%;
-    }
-            
-        #senha{
-            
-            margin: -12%;
-        }
+                position: absolute;
+                margin-left: 70%;
+                /* Ajuste conforme necessário */
+                cursor: pointer;
+                margin-top: 30%;
+            }
 
-    .input-container {
-        position: relative;
-        width: 90%;
-        margin-top: 13px;
-    }
+            #senha {
 
-    .input-container input {
-        padding-right: 40px; /* Espaço para o ícone */
-        margin-right: 10px; /* Ajuste para mover para a esquerda */
-    }
+                margin: -12%;
+            }
 
-    .input-container .eye {
-        position: absolute; 
-        top: 50%;
-        right: -9%; /* Ajuste conforme necessário */
-        transform: translateY(-50%);
-        cursor: pointer;
-    }
+            .input-container {
+                position: relative;
+                width: 90%;
+                margin-top: 30px;
+            }
+
+            .input-container input {
+                padding-right: 40px;
+                /* Espaço para o ícone */
+                margin-right: 10px;
+                /* Ajuste para mover para a esquerda */
+            }
+
+            .input-container .eye {
+                position: absolute;
+                top: 50%;
+                right: -9%;
+                /* Ajuste conforme necessário */
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
 
             #LG_Entrar {
                 background-color: #512da8;
                 color: white;
-                padding: 8px 16px;    
+                padding: 8px 16px;
             }
 
             #LG_Entrar:hover {
@@ -196,6 +210,17 @@
                 background-color: #cdb711;
                 color: rgb(0, 0, 0);
 
+            }
+
+            #confirmasenha {
+                margin-right: 20%;
+                margin-top: 3%;
+            }
+
+            #olhoConfirmar {
+
+                margin-left: 25%;
+                margin-right: -10%;
             }
         </style>
 </body>

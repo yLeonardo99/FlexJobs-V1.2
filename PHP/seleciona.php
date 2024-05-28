@@ -44,6 +44,51 @@ $stmt->execute();
 
   ?>
 
+  <!DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="complementsstyles/fonts.css" rel="stylesheet">
+    <link rel="Website icon" type="png" href="complements/images/3.png">
+    <title>FlexJobs - Sobre</title>
+  </head>
+
+  <body>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>Sobre nós</h2>
+          <p>FlexJobs é uma plataforma para conectar freelancers e contratantes em busca de talento. Oferecemos
+            oportunidades flexíveis para profissionais em todo o mundo.</p>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Entre em contato</h2>
+          <p>Email: contato@flexjobs.com</p>
+          <p>Telefone: (11) 5050-5050</p>
+        </div>
+
+        <div class="footer-section links">
+          <h2>Nos sigam nas redes</h2>
+          <ul>
+            <li>Instagram: @flexjobs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 FlexJobs. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+  </body>
+
+  </html>
+
   <!-- CSS da Tabela -->
 
   <style>
@@ -107,5 +152,57 @@ $stmt->execute();
       background-color: #cfe2f3;
 
       /* Cor de fundo ao passar o mouse */
+
+    }
+
+    /* rodape */
+
+    footer {
+      background-color: rgb(3, 3, 84);
+      color: white;
+      padding: 30px 0;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h2 {
+      font-size: 1.5em;
+      border-bottom: 2px solid rgb(51, 181, 220);
+      padding-bottom: 5px;
+    }
+
+    .footer-section p {
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .footer-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .footer-section a {
+      color: rgb(51, 181, 220);
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 2px solid rgb(51, 181, 220);
     }
   </style>
