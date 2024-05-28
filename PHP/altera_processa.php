@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+=======
+
+// Verificar se o método de requisição é POST e se o ID está presente na URL
+>>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
 
 // Verificar se a requisição é do tipo POST e se todos os campos obrigatórios estão presentes
 
@@ -29,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId']) && isset($_P
     $senhaCriptografada = md5($senha);
     $senhaCriptografada2 = md5($confirmarSenha);
 
+    // Criptografar a senha usando MD5
+
+    $senhaCriptografada = md5($senha);
+
     try {
 
         // Query para atualizar os dados no banco de dados
@@ -40,13 +49,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId']) && isset($_P
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':cpf', $cpf);
         $stmt->bindValue(':senha', $senhaCriptografada);
+<<<<<<< HEAD
         $stmt->bindValue(':confirmar_senha', $senhaCriptografada2);
+=======
+>>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
         $stmt->execute();
 
         // Redirecionar para uma página após a atualização bem-sucedida
 
         header("Location: http://localhost/FlexJobs/Vagas.html?mensagem=Dados+foram+atualizados");
         exit();
+
     } catch (PDOException $e) {
 
         // Tratar erros se houver algum problema na atualização
@@ -61,9 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId']) && isset($_P
 
 }
 
+<<<<<<< HEAD
 
 ?>
 
 
 
 
+=======
+?>
+>>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
