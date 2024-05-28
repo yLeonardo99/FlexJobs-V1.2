@@ -8,6 +8,7 @@ $senha = md5($_POST["senha"]);
 $confirmarSenha = md5($_POST["confirmarSenha"]);
 
 // Verificar se o email ou CPF já existem na tabela
+
 $query = "SELECT COUNT(*) AS count FROM flexjobs WHERE email = :email OR cpf = :cpf";
 $stmt = $pdo->prepare($query);
 $stmt->bindValue(':email', $email);

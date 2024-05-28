@@ -1,9 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
-// Verificar se o método de requisição é POST e se o ID está presente na URL
->>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
 
 // Verificar se a requisição é do tipo POST e se todos os campos obrigatórios estão presentes
 
@@ -49,10 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId']) && isset($_P
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':cpf', $cpf);
         $stmt->bindValue(':senha', $senhaCriptografada);
-<<<<<<< HEAD
         $stmt->bindValue(':confirmar_senha', $senhaCriptografada2);
-=======
->>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
         $stmt->execute();
 
         // Redirecionar para uma página após a atualização bem-sucedida
@@ -74,13 +66,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['userId']) && isset($_P
 
 }
 
-<<<<<<< HEAD
-
 ?>
-
-
-
-
-=======
-?>
->>>>>>> 932d76b5c070ee71c27aa9703def97e209de4a77
